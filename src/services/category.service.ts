@@ -47,3 +47,4 @@ class CategoryService {
     return deletedCategory;
   }
 }
+export const categoryService = new CategoryService();
