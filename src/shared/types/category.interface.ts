@@ -1,4 +1,4 @@
-export interface IColor {
+export interface ICategory {
   id: string;
   createdAt: string;
   description: string;
