@@ -16,4 +16,12 @@ class ProductService {
 
     return data || [];
   }
+  async getByStoreId(id: string) {
+    const { data } = await axiosWithAuth<IProduct[]>({
+      url: API_URL.products(`/by-storeId/${id}`),
+      method: "GET",
+    });
+
+    return data || [];
+  }
 }
