@@ -29,4 +29,13 @@ class CategoryService {
 
     return createdCategory;
   }
+  async update(id: string, data: ICategoryInput) {
+    const { data: updatedCategory } = await axiosWithAuth<ICategory>({
+      url: API_URL.categories(`/${id}`),
+      method: "PUT",
+      data,
+    });
+
+    return updatedCategory;
+  }
 }
