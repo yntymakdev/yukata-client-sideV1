@@ -28,4 +28,13 @@ class ColorService {
 
     return createdColor;
   }
+  async update(id: string, data: IColorInput) {
+    const { data: updatedColor } = await axiosWithAuth<IColor>({
+      url: API_URL.colors(`/${id}`),
+      method: "PUT",
+      data,
+    });
+
+    return updatedColor;
+  }
 }
