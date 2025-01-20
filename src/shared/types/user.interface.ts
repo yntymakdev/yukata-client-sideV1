@@ -1,3 +1,4 @@
+import { IProduct } from "./product.interface";
 import { IStore } from "./store.interface";
 
 export interface IUser {

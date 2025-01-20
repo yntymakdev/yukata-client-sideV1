@@ -1,3 +1,5 @@
+import { IUser } from "./user.interface";
+
 export interface IAuthForm {
   name: string;
   email: string;
