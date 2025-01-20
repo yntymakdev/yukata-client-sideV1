@@ -1,6 +1,6 @@
 import { axiosWithAuth } from "@/api/api.interceptors";
 import { API_URL } from "@/config/api.config";
-import { IColor } from "@/shared/types/color.interface";
+import { IColor, IColorInput } from "@/shared/types/color.interface";
 
 class ColorService {
   async getByStoreId(id: string) {
@@ -18,5 +18,14 @@ class ColorService {
     });
 
     return data;
+  }
+  async create(data: IColorInput, storeId: string) {
+    const { data: createdColor } = await axiosWithAuth<IColor>({
+      url: API_URL.colors(`/${storeId}`),
+      method: "POST",
+      data,
+    });
+
+    return createdColor;
   }
 }
