@@ -38,4 +38,12 @@ class CategoryService {
 
     return updatedCategory;
   }
+  async delete(id: string) {
+    const { data: deletedCategory } = await axiosWithAuth<ICategory>({
+      url: API_URL.categories(`/${id}`),
+      method: "DELETE",
+    });
+
+    return deletedCategory;
+  }
 }
