@@ -1,11 +1,11 @@
-import { SITE_NAME } from "@/constants/seo.constants";
+import { IStore } from "./store.interface";
 
 export interface IUser {
   id: string;
   name: string;
   email: string;
   picture: string;
-  favorites: string;
+  favorites: IProduct[];
   order: IOrder[];
   store: IStore[];
 }

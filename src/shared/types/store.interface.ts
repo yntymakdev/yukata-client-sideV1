@@ -1,6 +1,7 @@
 export interface IStore {
   id: string;
   name: string;
+  title: string;
   description: string;
 }
 

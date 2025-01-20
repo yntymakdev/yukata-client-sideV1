@@ -6,4 +6,4 @@ export interface IColor {
   storeId: string;
 }
 
-export interface ICategoryInput extends Pick<ICategory, "title" | "description"> {}
+export interface ICategoryInput extends Pick<ICategoryInput, "title" | "description"> {}
