@@ -1,4 +1,4 @@
-import { axiosClassic } from "@/api/api.interceptors";
+import { axiosClassic, axiosWithAuth } from "@/api/api.interceptors";
 import { API_URL } from "@/config/api.config";
 import { IProduct } from "@/shared/types/product.interface";
 
@@ -23,5 +23,13 @@ class ProductService {
     });
 
     return data || [];
+  }
+  async getByCategory(categoryId: string) {
+    const { data } = await axiosClassic<IProduct[]>({
+      url: API_URL.products(`/by-category/${categoryId}`),
+      method: "GET",
+    });
+
+    return data;
   }
 }
